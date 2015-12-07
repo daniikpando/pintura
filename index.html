@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Paint</title>
+	<style>
+	html,body{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
+	canvas{
+		border: 1px solid black;	
+
+	}
+	.clear{
+		clear: both;
+	}
+	#instruccion,h1,p{
+		margin: 0;
+		padding: 0;
+	}
+	</style>
+</head>
+<body>
+	<h1>Programa de dibujo</h1>
+	<canvas id="canvas" height="300px" width="800px"></canvas>
+	<h2 id="instruccion">Haz click sobre el canvas y ecualiza el color con los controladores que estan abajo</h2>
+	<p>R: rojo, G: Verde, B: Azul, A: Opacidad</p>
+	<div class="clear"></div>
+	<label for="rojo">R: </label>
+	<input type="range" id="rojo" min="0" max="255">
+	
+	<div class="clear"></div>
+	<label for="verde">G: </label>
+	<input type="range" id="verde" min="0" max="255">
+
+	<div class="clear"></div>
+	<label for="azul">B: </label>
+	<input type="range" id="azul" min="0" max="255">
+
+	<div class="clear"></div>
+	<label for="opacity">A: </label>
+	<input type="range" id="opacity" min="0" max="9">
+
+	<div class="clear"></div>
+	<label for="a_pincel">Anchura del pincel: </label>
+	<input type="range" id="a_pincel" min="5" max="35">
+	<div class="clear"></div>
+	<button id="limpiar">Limpiar dibujos</button>
+	<script src="js/main.js"></script>
+	<script>
+	window.onload=function(){
+		var canvas = document.getElementById('canvas');
+		var boton_r = document.getElementById('rojo');
+		var boton_a = document.getElementById('azul');
+		var boton_v = document.getElementById('verde');
+		var boton_o = document.getElementById('opacity')
+		var boton_anchura = document.getElementById('a_pincel');
+		app = new App(canvas,boton_r,boton_a,boton_v,boton_o,boton_anchura);
+	}
+	</script>
+</body>
+</html>
